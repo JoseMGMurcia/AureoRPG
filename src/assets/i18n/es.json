@@ -3,8 +3,30 @@
     "HOME": "Inicio",
     "CHARACTERS": "Personajes",
     "DETAIL": "Detalle",
-    "WIKI": "Información",
+    "WIKI": "Documentación",
     "DICE_SET": "Lanzar Dados",
     "INFO": "Sobre esta app",
-    "HEROS_AGE": "La edad de los heroes"
+    "HEROS_AGE": "La edad de los heroes",
+    "INFO_PAGE": {  
+        "TITLE": "Información",
+        "BUY": "Compra un café para Pepe",
+        "MAIN_TEXT": "Esta aplicación ha sido desarrollada de forma totalmente altruista y nuestra única forma de financiación es mediante pequeñas donaciones totalmente voluntarias: ",
+        "NO_GOSSIP_TEXT": "Mientras ejecutas esta aplicación no fisgamos sobre ningún tipo de información en tu dispositivo ni te vamos a pedir que te registres en ningun sitio por lo que todo lo que hagas mientras estés en ella será totalmente confidencial.",
+        "VERSION": "Versión: 0.0.1 Agosto 2021"
+    },
+    "HOME_PAGE": {  
+        "TITLE": "Inicio"
+    },
+    "CHAR_PAGE": {  
+        "TITLE": "Personajes"
+    },
+    "WIKI_PAGE": {  
+        "TITLE": "Documentación"
+    },
+    "DICES_PAGE": {  
+        "TITLE": "Lanzar Dados"
+    },
+    "DETAIL_PAGE": {  
+        "TITLE": "Personaje"
+    }
 }

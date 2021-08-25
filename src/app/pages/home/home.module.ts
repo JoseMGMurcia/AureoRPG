@@ -4,10 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { FolderPageRoutingModule } from './folder-routing.module';
+import { HomePageRoutingModule } from './home-routing.module';
 
-import { FolderPage } from './folder.page';
-
+import { HomePage } from './home.page';
 
 import {  HttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -22,7 +21,7 @@ export function createTranslateLoader(http: HttpClient) {
     CommonModule,
     FormsModule,
     IonicModule,
-    FolderPageRoutingModule,
+    HomePageRoutingModule,
     TranslateModule.forChild({
       loader: {
         provide: TranslateLoader,
@@ -31,6 +30,6 @@ export function createTranslateLoader(http: HttpClient) {
       }
     })
   ],
-  declarations: [FolderPage]
+  declarations: [HomePage]
 })
-export class FolderPageModule {}
+export class HomePageModule {}
