@@ -1,4 +1,4 @@
-class CombatEquip {
+export class CombatEquip {
     private name: string;
     private initialDamage: number;
     private activeDefence: number;

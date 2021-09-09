@@ -1,4 +1,4 @@
-class Skill {
+export class Skill {
     private name: string;
     private level: number;
     private mod: number[];

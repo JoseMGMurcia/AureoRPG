@@ -1,4 +1,4 @@
-class GodAffinity{
+export class GodAffinity{
     private god: string;
     private affinity: number;
     private aretes: number;

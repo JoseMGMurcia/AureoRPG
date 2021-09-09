@@ -1,5 +1,4 @@
 {
-    "HELLO": "hola",
     "HOME": "Inicio",
     "CHARACTERS": "Personajes",
     "DETAIL": "Detalle",
@@ -18,15 +17,31 @@
         "TITLE": "Inicio"
     },
     "CHAR_PAGE": {  
-        "TITLE": "Personajes"
+        "TITLE": "Personajes",
+        "EXISTING": "Personajes actuales",
+        "ADD": "Crear Personaje",
+        "DELATE": "Eliminar Personaje"
     },
     "WIKI_PAGE": {  
         "TITLE": "Documentación"
     },
     "DICES_PAGE": {  
-        "TITLE": "Lanzar Dados"
+        "TITLE": "Lanzar Dados",
+        "ATRIBUTE": "Caracteristica",
+        "SKILL": "Habilidad",
+        "MOD": "Modificador",
+        "ROLL": "Lanzar Dado",
+        "ALERT": {
+            "HEADER": "Lanzamiento de dado",
+            "TEXT": "1D10 + {{attribute}} (carac.), {{skill}} (hab.) y {{modif}} (mod.)",
+            "RESULT": " El resultado total obtenido es: ",
+            "AGREE": "De acuerdo"
+        }
     },
     "DETAIL_PAGE": {  
-        "TITLE": "Personaje"
+        "TITLE": "Personaje",
+        "PRIMARY": "Principal",
+        "MECHAMISM": "Mecanismos",
+        "BACKGROUND": "Transfondo"
     }
 }

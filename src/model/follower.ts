@@ -1,4 +1,4 @@
-class Follower{
+export class Follower{
     private name: string;
     private arquetype: string;
     private combat: string;

@@ -1,4 +1,4 @@
-class Companion{
+export class Companion{
     private name: string;
     private player: string;
     private cult: string;

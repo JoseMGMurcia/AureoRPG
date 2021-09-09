@@ -17,10 +17,12 @@
         <ion-list id="labels-list">
           <ion-list-header>{{ "CHARACTERS" | translate }}</ion-list-header>
 
-          <ion-item *ngFor="let character of characters" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ character }}</ion-label>
-          </ion-item>
+          <ion-menu-toggle auto-hide="false" *ngFor="let character of characters">
+            <ion-item lines="none">
+              <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp" ></ion-icon>
+              <ion-label (click)="navigateToDetail(character)">{{ character.name }}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
         </ion-list>
       </ion-content>
     </ion-menu>

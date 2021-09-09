@@ -1,4 +1,4 @@
-class Power{
+export class Power{
     private name: string;
     private minimumAfinity: string;
     private action: string;

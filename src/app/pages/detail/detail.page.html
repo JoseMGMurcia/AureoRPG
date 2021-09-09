@@ -3,10 +3,28 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>{{ "DETAIL_PAGE.TITLE" | translate }}</ion-title>
+    <ion-title>{{ character.getName() }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <!-- <ion-tabs>
+     <ion-tab-bar slot="bottom">
+      <ion-tab-button tab="primary">
+        <ion-icon name="calendar"></ion-icon>
+        <ion-label>{{ "DETAIL_PAGE.PRIMARY" | translate }}</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="mechanism">
+        <ion-icon name="person-circle"></ion-icon>
+        <ion-label>{{ "DETAIL_PAGE.MECHAMISM" | translate }}</ion-label>
+      </ion-tab-button>
+  
+      <ion-tab-button tab="background">
+        <ion-icon name="map"></ion-icon>
+        <ion-label>{{ "DETAIL_PAGE.BACKGROUND" | translate }}</ion-label>
+      </ion-tab-button>
+  
+    </ion-tab-bar>
+  </ion-tabs> -->
 </ion-content>

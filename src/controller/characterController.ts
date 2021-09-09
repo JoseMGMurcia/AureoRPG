@@ -1,4 +1,4 @@
-class CharacterController{
+export class CharacterController{
 
     //Creates an unique id from name
     static generateId(name: string) {

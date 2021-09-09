@@ -1,4 +1,4 @@
-class Atributes {
+export class Atributes {
     private agility: Atribute;
     private comunication: Atribute;
     private reflexes: Atribute;
