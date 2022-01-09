@@ -19,7 +19,7 @@ export class DicesPage implements OnInit {
   ngOnInit() {
   }
 
-  async rollDice(data: any){
+  rollDice(data: any){
  
     const rndInt = Math.floor(Math.random() * 10) + 1 + data.attribute + data.skill + data.modif; 
     let alerParams: any = {};
@@ -39,9 +39,8 @@ export class DicesPage implements OnInit {
     this.translate.get("DICES_PAGE.ALERT.AGREE").subscribe((res: string) => {
       alerParams.buttons =  [res];
     });
-    const alert = await alertController.create(alerParams);
-
-    await alert.present();
+    alertController.create(alerParams).then(res => {
+      res.present();
+    });
   }
-
 }

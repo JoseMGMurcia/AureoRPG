@@ -28,6 +28,21 @@ export class Character {
             new GodAffinity('Hera', 0),
             new GodAffinity('Zeus', 0)
         ];
+        
+        this.titles = [];
+        this.skills = [];
+        this.socialFeatures = [];
+        this.commonGifts = [];
+        this.divineGifts = [];
+        this.curses = [];
+        this.powers = [];
+        this.combatEquipment = [];
+        this.gloryLines = [];
+        this.infamyLines = [];
+        this.followers = [];
+        this.companions = [];
+        this.otherNotes = [];
+        this.otherEquip = [];
     }
 
     private id: string;
@@ -74,6 +89,9 @@ export class Character {
     private savedXP: number;
     private accumulatedXP: number;
     private aureoXP: number;
+
+
+    //Getters & Setters
 
     public getId(): string {
         return this.id;

@@ -6,12 +6,12 @@
     "DICE_SET": "Lanzar Dados",
     "INFO": "Sobre esta app",
     "HEROS_AGE": "La edad de los heroes",
-    "INFO_PAGE": {  
+    "INFO_PAGE": { 
+        "VERSION": "Versión: 0.0.2 Septiembre 2021",
         "TITLE": "Información",
         "BUY": "Compra un café para Pepe",
         "MAIN_TEXT": "Esta aplicación ha sido desarrollada de forma totalmente altruista y nuestra única forma de financiación es mediante pequeñas donaciones totalmente voluntarias: ",
-        "NO_GOSSIP_TEXT": "Mientras ejecutas esta aplicación no fisgamos sobre ningún tipo de información en tu dispositivo ni te vamos a pedir que te registres en ningun sitio por lo que todo lo que hagas mientras estés en ella será totalmente confidencial.",
-        "VERSION": "Versión: 0.0.1 Agosto 2021"
+        "NO_GOSSIP_TEXT": "Mientras ejecutas esta aplicación no fisgamos sobre ningún tipo de información en tu dispositivo ni te vamos a pedir que te registres en ningun sitio por lo que todo lo que hagas mientras estés en ella será totalmente confidencial."
     },
     "HOME_PAGE": {  
         "TITLE": "Inicio"
@@ -20,7 +20,20 @@
         "TITLE": "Personajes",
         "EXISTING": "Personajes actuales",
         "ADD": "Crear Personaje",
-        "DELATE": "Eliminar Personaje"
+        "DELETE_ALERT": {
+            "HEADER": "Eliminar Personaje",
+            "TEXT": "Si aceptas {{character}} será borrado y no se podrá recuperar",
+            "AGREE": "Aceptar",
+            "CANCEL": "Cancelar"
+        },
+        "ADD_ALERT": {
+            "HEADER": "Crear Personaje",
+            "TEXT": "Introduce el nombre del nuevo personaje",
+            "NAME": "Nombre del nuevo personaje",
+            "AGREE": "Aceptar",
+            "CANCEL": "Cancelar",
+            "NO_VALID_NAME": "Mombre no válido"
+        }
     },
     "WIKI_PAGE": {  
         "TITLE": "Documentación"

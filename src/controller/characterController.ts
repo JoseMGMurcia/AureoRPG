@@ -6,8 +6,13 @@ export class CharacterController{
     }
     
     static isNameValid(name: string) {
-        const NAME_RE = /a/; //valid regular expresion for names must be implemented
-        return name.match(NAME_RE);
+        // const NAME_RE = /a/; //valid regular expresion for names must be implemented
+        // return name.match(NAME_RE);
+
+        if (name.length > 2){
+            return true;
+        }
+        return false;
     }
 
 }
