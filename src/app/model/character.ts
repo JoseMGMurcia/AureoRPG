@@ -5,14 +5,38 @@ import { Follower } from "./follower";
 import { GodAffinity } from "./godAffinity";
 import { Power } from "./power";
 import { Skill } from "./skill";
-import { CharacterController } from "src/controller/characterController";
+import { CharacterController } from "src/app/controller/characterController";
 
 export class Character {
 
     constructor(name: string) {
         this.name = name;
         this.id = CharacterController.generateId(name);
-        this.atributes = new Atributes();
+
+        this.cult = '';
+        this.polis = '';
+        this.arquetype= '';
+        this.socialGroup = '';
+        this.sex= '';
+        this.age = 0;
+
+        this.player = '';
+        this.aureo = 0;
+        this.aureoRemaining = 0;
+        this.hibris = 0;
+
+        this.lifePoints = 0;
+        this.actualLifeP = 0;
+        this.titles = [];
+
+        this.atributes = new  Atributes();
+
+        this.skills = [];
+        this.socialFeatures = [];
+        this.commonGifts = [];
+        this.divineGifts = [];
+        this.curses = [];
+        this.powers = [];
 
         this.godAfinities = [
             new GodAffinity('Afrodita', 0),
@@ -28,21 +52,22 @@ export class Character {
             new GodAffinity('Hera', 0),
             new GodAffinity('Zeus', 0)
         ];
-        
-        this.titles = [];
-        this.skills = [];
-        this.socialFeatures = [];
-        this.commonGifts = [];
-        this.divineGifts = [];
-        this.curses = [];
-        this.powers = [];
         this.combatEquipment = [];
+
+        this.glory = 0;
         this.gloryLines = [];
+        this.infamy = 0;
         this.infamyLines = [];
+
         this.followers = [];
         this.companions = [];
+
         this.otherNotes = [];
         this.otherEquip = [];
+
+        this.savedXP = 0;
+        this.accumulatedXP = 0;
+        this.aureoXP = 0;
     }
 
     private id: string;
@@ -89,7 +114,6 @@ export class Character {
     private savedXP: number;
     private accumulatedXP: number;
     private aureoXP: number;
-
 
     //Getters & Setters
 
@@ -372,5 +396,4 @@ export class Character {
     public setAureoXP(aureoXP: number): void {
         this.aureoXP = aureoXP;
     }
-
 }

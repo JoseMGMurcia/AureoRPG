@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { alertController } from '@ionic/core';
-import { present } from '@ionic/core/dist/types/utils/overlays';
 import { TranslateService } from '@ngx-translate/core';
 import { AppComponent } from 'src/app/app.component';
-import { CharacterController } from 'src/controller/characterController';
-import { Character } from 'src/model/character';
+import { CharacterController } from 'src/app/controller/characterController';
+import { Character } from 'src/app/model/character';
+import { StorageService } from 'src/app/services/storage.service';
+import { DATABASE_NAME } from 'src/app/const';
 
 @Component({
   selector: 'app-characters',
@@ -15,16 +16,22 @@ export class CharactersPage implements OnInit {
 
   characs: Character[];
   app : AppComponent;
-  constructor(app: AppComponent, private translate: TranslateService) {
+  constructor(
+    app: AppComponent, 
+    private translate: TranslateService) {
     this.app = app;
-    this.characs = app.characters;
+    
     
   }
 
   ngOnInit() {
   }
 
-  addCharacter(){
+  ionViewWillEnter(){
+    this.characs = this.app.characters;
+  }
+
+  async addCharacter(){
     let alerParams: any = {};
     this.translate.get("CHAR_PAGE.ADD_ALERT.HEADER").subscribe((res: string) => {
       alerParams.header =  res;
@@ -47,6 +54,7 @@ export class CharactersPage implements OnInit {
         handler: data => {
           if(CharacterController.isNameValid(data.name1)){
             this.app.characters.push(new Character(data.name1));
+            this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters))
           }else{
             //not a valid name
             alerParams= {};
@@ -92,6 +100,7 @@ export class CharactersPage implements OnInit {
           const index = this.app.characters.indexOf(character);
           if (index > -1) {
             this.app.characters.splice(index, 1);
+            this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters));
           }
         }
       }];

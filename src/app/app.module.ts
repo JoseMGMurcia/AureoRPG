@@ -9,7 +9,10 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClientModule, HttpClient} from '@angular/common/http'
+import { HttpClientModule, HttpClient} from '@angular/common/http';
+
+import { IonicStorageModule } from '@ionic/storage-angular';
+import { StorageService } from './services/storage.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +20,7 @@ import { HttpClientModule, HttpClient} from '@angular/common/http'
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     TranslateModule.forRoot({
@@ -27,7 +31,7 @@ import { HttpClientModule, HttpClient} from '@angular/common/http'
       }
     })  
   ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy}, StorageService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
