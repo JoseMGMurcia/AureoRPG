@@ -8,15 +8,20 @@ import { Character } from 'src/app/model/character';
   styleUrls: ['./detail.page.scss'],
 })
 export class DetailPage implements OnInit {
+  private section : string = "1";
 
-  character: Character;
+  private character: Character;
 
-constructor(private router: Router) {
-  const state = this.router.getCurrentNavigation().extras.state
-  if (state) {
-      this.character = state.character;
-      console.log(this.character.getName());
+  constructor(private router: Router) {
+    const state = this.router.getCurrentNavigation().extras.state
+    if (state) {
+        this.character = state.character;
+        console.log(this.character.getName());
+    }
   }
-}
   ngOnInit() {}
+
+  sectionChanged(event: any) {
+    this.section = event.detail.value;
+  }
 }

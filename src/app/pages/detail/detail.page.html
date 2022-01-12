@@ -8,23 +8,26 @@
 </ion-header>
 
 <ion-content>
-  <!-- <ion-tabs>
-     <ion-tab-bar slot="bottom">
-      <ion-tab-button tab="primary">
-        <ion-icon name="calendar"></ion-icon>
-        <ion-label>{{ "DETAIL_PAGE.PRIMARY" | translate }}</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="mechanism">
-        <ion-icon name="person-circle"></ion-icon>
-        <ion-label>{{ "DETAIL_PAGE.MECHAMISM" | translate }}</ion-label>
-      </ion-tab-button>
-  
-      <ion-tab-button tab="background">
-        <ion-icon name="map"></ion-icon>
-        <ion-label>{{ "DETAIL_PAGE.BACKGROUND" | translate }}</ion-label>
-      </ion-tab-button>
-  
-    </ion-tab-bar>
-  </ion-tabs> -->
+  <!-- Primary section -->
+  <ng-container *ngIf="section === '1'">
+    {{ "DETAIL_PAGE.PRIMARY" | translate }}
+  </ng-container>
+  <!-- Combat section -->
+  <ng-container *ngIf="section === '2'">
+    {{ "DETAIL_PAGE.COMBAT" | translate }}
+  </ng-container>
+  <!-- Other section -->
+  <ng-container *ngIf="section === '3'">
+    {{ "DETAIL_PAGE.OTHER" | translate }}
+  </ng-container>
+
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-segment value="1" (ionChange)="sectionChanged($event)">
+      <ion-segment-button value="1"> {{ "DETAIL_PAGE.PRIMARY" | translate }} </ion-segment-button>
+      <ion-segment-button value="2"> {{ "DETAIL_PAGE.COMBAT" | translate }} </ion-segment-button>
+      <ion-segment-button value="3"> {{ "DETAIL_PAGE.OTHER" | translate }} </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-footer>
