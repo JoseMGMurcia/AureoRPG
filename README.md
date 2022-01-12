@@ -11,7 +11,7 @@ Current versión 0.0.3
   - [x] Add Storage.
   - [x] Delete character.
   - [x] Add character.
-  - [ ] Tabs for character detail page.
+  - [x] Tabs for character detail page.
   - [ ] Represent current character in the tabs.
   - [ ] Finish character mapping from JSON.
   - [ ] Editing character in tab.
