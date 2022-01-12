@@ -13,30 +13,7 @@ export class Character {
         this.name = name;
         this.id = CharacterController.generateId(name);
 
-        this.cult = '';
-        this.polis = '';
-        this.arquetype= '';
-        this.socialGroup = '';
-        this.sex= '';
-        this.age = 0;
-
-        this.player = '';
-        this.aureo = 0;
-        this.aureoRemaining = 0;
-        this.hibris = 0;
-
-        this.lifePoints = 0;
-        this.actualLifeP = 0;
-        this.titles = [];
-
         this.atributes = new  Atributes();
-
-        this.skills = [];
-        this.socialFeatures = [];
-        this.commonGifts = [];
-        this.divineGifts = [];
-        this.curses = [];
-        this.powers = [];
 
         this.godAfinities = [
             new GodAffinity('Afrodita', 0),
@@ -52,68 +29,53 @@ export class Character {
             new GodAffinity('Hera', 0),
             new GodAffinity('Zeus', 0)
         ];
-        this.combatEquipment = [];
-
-        this.glory = 0;
-        this.gloryLines = [];
-        this.infamy = 0;
-        this.infamyLines = [];
-
-        this.followers = [];
-        this.companions = [];
-
-        this.otherNotes = [];
-        this.otherEquip = [];
-
-        this.savedXP = 0;
-        this.accumulatedXP = 0;
-        this.aureoXP = 0;
     }
 
-    private id: string;
-    private name: string;
+    private id: string = '';
+    private name: string = '';
 
-    private cult: string;
-    private polis: string;
-    private arquetype: string;
-    private socialGroup: string;
-    private sex: string;
-    private age: number;
+    private cult: string = '';
+    private polis: string = '';
+    private arquetype: string = '';
+    private socialGroup: string = '';
+    private sex: string = '';
+    private age: number = 0;
       
-    private player: string;
-    private aureo: number;
-    private aureoRemaining: number;
-    private hibris: number;
+    private player: string = '' ;
+    private aureo: number = 0;
+    private aureoRemaining: number = 0;
+    private hibris: number = 0;
 
-    private lifePoints: number;
-    private actualLifeP: number;
-    private titles: string[];
+    private lifePoints: number = 0;
+    private actualLifeP: number = 0;
+    private titles: string[] = [];
 
     private atributes: Atributes;
-    private skills: Skill[];
-    private socialFeatures: string[];
-    private commonGifts: string[];
-    private divineGifts: string[];
-    private curses: string[];
-    private powers: Power[];
+    private skills: Skill[] = [];
+    private socialFeatures: string[] = [];
+    private commonGifts: string[] = [];
+    private divineGifts: string[] = [];
+    private curses: string[] = [];
+    private powers: Power[] = [];
 
     private godAfinities: GodAffinity[];
-    private combatEquipment: CombatEquip[];
+    private combatEquipment: CombatEquip[] = [];
 
-    private glory: number;
-    private gloryLines: string[];
-    private infamy: number;
-    private infamyLines: string[];
+    private glory: number = 0;
+    private gloryLines: string[] = [];
+    private infamy: number = 0;
+    private infamyLines: string[] = [];
 
-    private followers: Follower[];
-    private companions: Companion[];
+    private followers: Follower[] = [];
+    private companions: Companion[] = [];
 
-    private otherNotes: string[];
-    private otherEquip: string[];
+    private otherNotes: string[] = [];
+    private otherEquip: string[] = [];
 
-    private savedXP: number;
-    private accumulatedXP: number;
-    private aureoXP: number;
+    private savedXP: number = 0;
+    private accumulatedXP: number = 0 ;
+    private aureoXP: number = 0;
+
 
     //Getters & Setters
 
