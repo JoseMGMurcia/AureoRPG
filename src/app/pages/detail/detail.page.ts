@@ -11,12 +11,13 @@ export class DetailPage implements OnInit {
   private section : string = "1";
 
   private character: Character;
+  private isReadonlyMode: boolean;
 
   constructor(private router: Router) {
     const state = this.router.getCurrentNavigation().extras.state
     if (state) {
         this.character = state.character;
-        console.log(this.character.getName());
+        this.isReadonlyMode = true;
     }
   }
   ngOnInit() {}

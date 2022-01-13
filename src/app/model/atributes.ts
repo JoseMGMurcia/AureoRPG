@@ -99,22 +99,22 @@ export class Atributes {
 }
 
 class Atribute {
-    private valor: number;
+    private value: number;
     private mod: number[];
 
-    constructor(valor: number){
-        this.valor = valor;
+    constructor(value: number){
+        this.value = value;
         this.mod = [];
     }
 
     //Getter & Setter
 
-    public getValor(): number {
-        return this.valor;
+    public getValue(): number {
+        return this.value;
     }
 
-    public setValor(valor: number): void {
-        this.valor = valor;
+    public setValue(value: number): void {
+        this.value = value;
     }
 
     public getMod(): number[] {

@@ -10,7 +10,34 @@
 <ion-content>
   <!-- General section -->
   <ng-container *ngIf="section === '1'">
-    {{ "DETAIL_PAGE.GENERAL" | translate }}
+    <ion-card >
+      <ion-item class="generalInfo">
+        <ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.NAME" | translate }}</ion-label>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.NAME" | translate }}' value=" {{ character.getName() }}" ></ion-input>
+        <ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.AGE" | translate }}</ion-label>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.AGE" | translate }}' value=" {{ character.getAge() }}" ></ion-input>
+      </ion-item>
+    </ion-card>
+    <ion-card >
+      <ion-card-header class="generalInfoHeader">
+        <ion-card-title class="generalInfoHeader">{{ "DETAIL_PAGE.GENERAL_SEC.ATRIBUTES" | translate }}</ion-card-title>
+      </ion-card-header>
+      <ion-item class="generalInfo">
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.AGILITY" | translate }}' value=" {{ character.getAtributes().getAgility().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.AGILITY" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.APPEAR" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.APPEAR" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.COMMUN" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.COMMUN" | translate }}</ion-label></ion-input>
+      </ion-item>
+      <ion-item class="generalInfo">
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.MIND" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.MIND" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.REFLEX" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.REFLEX" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.RESIST" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.RESIST" | translate }}</ion-label></ion-input>
+      </ion-item>
+      <ion-item class="generalInfo"> 
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.SENSE" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.SENSE" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.SOUL" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.SOUL" | translate }}</ion-label></ion-input>
+        <ion-input [readonly]="isReadonlyMode" placeholder='{{ "DETAIL_PAGE.GENERAL_SEC.STRENGTH" | translate }}' value=" {{ character.getAtributes().getAppearance().getValue() }}" ><ion-label>{{ "DETAIL_PAGE.GENERAL_SEC.STRENGTH" | translate }}</ion-label></ion-input>
+      </ion-item>
+    </ion-card>
   </ng-container>
   <!-- Combat section -->
   <ng-container *ngIf="section === '2'">
@@ -32,12 +59,12 @@
 </ion-content>
 <ion-footer>
   <ion-toolbar>
-    <ion-segment value="1" (ionChange)="sectionChanged($event)">
-      <ion-segment-button value="1"> {{ "DETAIL_PAGE.GENERAL" | translate }} </ion-segment-button>
-      <ion-segment-button value="2"> {{ "DETAIL_PAGE.COMBAT" | translate }} </ion-segment-button>
-      <ion-segment-button value="3"> {{ "DETAIL_PAGE.POWERS" | translate }} </ion-segment-button>
-      <ion-segment-button value="4"> {{ "DETAIL_PAGE.SKILLS" | translate }} </ion-segment-button>
-      <ion-segment-button value="5"> {{ "DETAIL_PAGE.BACKGROUND" | translate }} </ion-segment-button>
+    <ion-segment value="1" (ionChange)="sectionChanged($event)" scrollable >
+      <ion-segment-button value="1" class="segmentButton"> {{ "DETAIL_PAGE.GENERAL" | translate }} </ion-segment-button>
+      <ion-segment-button value="2" class="segmentButton"> {{ "DETAIL_PAGE.COMBAT" | translate }} </ion-segment-button>
+      <ion-segment-button value="3" class="segmentButton"> {{ "DETAIL_PAGE.POWERS" | translate }} </ion-segment-button>
+      <ion-segment-button value="4" class="segmentButton"> {{ "DETAIL_PAGE.SKILLS" | translate }} </ion-segment-button>
+      <ion-segment-button value="5" class="segmentButton"> {{ "DETAIL_PAGE.BACKGROUND" | translate }} </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>

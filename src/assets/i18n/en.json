@@ -16,7 +16,8 @@
         "NO_GOSSIP_TEXT": "Mientras ejecutas esta aplicación no fisgamos sobre ningún tipo de información en tu dispositivo ni te vamos a pedir que te registres en ningun sitio por lo que todo lo que hagas mientras estés en ella será totalmente confidencial."
     },
     "HOME_PAGE": {  
-        "TITLE": "Inicio"
+        "TITLE": "Inicio",
+        "DESCRIPTION": "Áureo: la Edad de los Héroes es un juego de rol ambientado a medio camino entre la mitología griega y el Mediterráneo de la Era Clásica en el que podrás interpretar a un héroe o heroína que tendrá que enfrentarse a  criaturas de los mitos, conspiraciones políticas, batallas, viajes, la  caprichosa voluntad de los dioses y a la hibris que crece en su interior."
     },
     "CHAR_PAGE": {  
         "TITLE": "Personajes",
@@ -59,6 +60,20 @@
         "COMBAT": "Combate",
         "POWERS": "Poderes",
         "SKILLS": "Habilidades",
-        "BACKGROUND": "Trasfondo"
+        "BACKGROUND": "Trasfondo",
+        "GENERAL_SEC":{
+            "NAME": "Nombre:",
+            "AGE": "Edad:",
+            "ATRIBUTES": "Atributos",
+            "AGILITY": "Agilidad",
+            "APPEAR": "Apariencia",
+            "COMMUN": "Comunicación",
+            "MIND": "Mente",
+            "REFLEX": "Reflejos",
+            "RESIST": "Resistencia",
+            "SENSE": "Sentir",
+            "SOUL": "Alma",
+            "STRENGTH": "Fuerza"
+        }
     }
 }
