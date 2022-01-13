@@ -11,7 +11,7 @@ Current versión 0.0.4
   - [x] Add Storage.
   - [x] Delete character.
   - [x] Add character.
-  - [x] Tabs for character detail page.
+  - [x] Tabs for character detail page.(General / combat / powers / skill / background )
   - [ ] Represent current character in the tabs.
   - [ ] Finish character mapping from JSON.
   - [ ] Editing character in tab.
