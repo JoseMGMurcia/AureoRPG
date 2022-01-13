@@ -8,26 +8,36 @@
 </ion-header>
 
 <ion-content>
-  <!-- Primary section -->
+  <!-- General section -->
   <ng-container *ngIf="section === '1'">
-    {{ "DETAIL_PAGE.PRIMARY" | translate }}
+    {{ "DETAIL_PAGE.GENERAL" | translate }}
   </ng-container>
   <!-- Combat section -->
   <ng-container *ngIf="section === '2'">
     {{ "DETAIL_PAGE.COMBAT" | translate }}
   </ng-container>
-  <!-- Other section -->
+  <!-- powers section -->
   <ng-container *ngIf="section === '3'">
-    {{ "DETAIL_PAGE.OTHER" | translate }}
+    {{ "DETAIL_PAGE.POWERS" | translate }}
+  </ng-container>
+   <!-- skills section -->
+   <ng-container *ngIf="section === '4'">
+    {{ "DETAIL_PAGE.SKILLS" | translate }}
+  </ng-container>
+   <!-- background section -->
+   <ng-container *ngIf="section === '5'">
+    {{ "DETAIL_PAGE.BACKGROUND" | translate }}
   </ng-container>
 
 </ion-content>
 <ion-footer>
   <ion-toolbar>
     <ion-segment value="1" (ionChange)="sectionChanged($event)">
-      <ion-segment-button value="1"> {{ "DETAIL_PAGE.PRIMARY" | translate }} </ion-segment-button>
+      <ion-segment-button value="1"> {{ "DETAIL_PAGE.GENERAL" | translate }} </ion-segment-button>
       <ion-segment-button value="2"> {{ "DETAIL_PAGE.COMBAT" | translate }} </ion-segment-button>
-      <ion-segment-button value="3"> {{ "DETAIL_PAGE.OTHER" | translate }} </ion-segment-button>
+      <ion-segment-button value="3"> {{ "DETAIL_PAGE.POWERS" | translate }} </ion-segment-button>
+      <ion-segment-button value="4"> {{ "DETAIL_PAGE.SKILLS" | translate }} </ion-segment-button>
+      <ion-segment-button value="5"> {{ "DETAIL_PAGE.BACKGROUND" | translate }} </ion-segment-button>
     </ion-segment>
   </ion-toolbar>
 </ion-footer>

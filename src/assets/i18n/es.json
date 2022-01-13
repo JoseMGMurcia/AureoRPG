@@ -53,8 +53,10 @@
     },
     "DETAIL_PAGE": {  
         "TITLE": "Personaje",
-        "PRIMARY": "Principal",
+        "GENERAL": "General",
         "COMBAT": "Combate",
-        "OTHER": "Otros"
+        "POWERS": "Poderes",
+        "SKILLS": "Habilidades",
+        "BACKGROUND": "Trasfondo"
     }
 }
