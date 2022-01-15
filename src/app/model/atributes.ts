@@ -1,3 +1,5 @@
+import { Modificator } from "./modificator";
+
 export class Atributes {
     private agility: Atribute;
     private comunication: Atribute;
@@ -100,11 +102,11 @@ export class Atributes {
 
 class Atribute {
     private value: number;
-    private mod: number[];
+    private mods: Modificator[];
 
     constructor(value: number){
         this.value = value;
-        this.mod = [];
+        this.mods = [];
     }
 
     //Getter & Setter
@@ -117,12 +119,12 @@ class Atribute {
         this.value = value;
     }
 
-    public getMod(): number[] {
-        return this.mod;
+    public getMods(): Modificator[] {
+        return this.mods;
     }
 
-    public setMod(mod: number[]): void {
-        this.mod = mod;
+    public setMods(mods: Modificator[]): void {
+        this.mods = mods;
     }
     
 }

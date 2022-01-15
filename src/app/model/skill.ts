@@ -1,12 +1,14 @@
+import { Modificator } from "./modificator";
+
 export class Skill {
     private name: string;
     private level: number;
-    private mod: number[];
+    private mods: Modificator[];
 
     constructor(name: string, level: number){
         this.level = level;
         this.name = name;
-        this.mod = [];
+        this.mods = [];
     }
 
     //Getter & Setter
@@ -27,11 +29,11 @@ export class Skill {
         this.level = level;
     }
 
-    public getMod(): number[] {
-        return this.mod;
+    public getMods(): Modificator[] {
+        return this.mods;
     }
 
-    public setMod(mod: number[]): void {
-        this.mod = mod;
+    public setMods(mods: Modificator[]): void {
+        this.mods = mods;
     }
 }

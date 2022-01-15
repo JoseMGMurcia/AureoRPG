@@ -16,18 +16,18 @@ export class Character {
         this.atributes = new  Atributes();
 
         this.godAfinities = [
-            new GodAffinity('Afrodita', 0),
-            new GodAffinity('Artemisa', 0),
-            new GodAffinity('Hades', 0),
-            new GodAffinity('Hermes', 0),
-            new GodAffinity('Apolo', 0),
-            new GodAffinity('Atenea', 0),
-            new GodAffinity('Hefesto', 0),
-            new GodAffinity('Poseidon', 0),
-            new GodAffinity('Ares', 0),
-            new GodAffinity('Dioniso', 0),
-            new GodAffinity('Hera', 0),
-            new GodAffinity('Zeus', 0)
+            new GodAffinity('Afrodita', 0, 0, 0),
+            new GodAffinity('Artemisa', 0, 0, 0),
+            new GodAffinity('Hades',    0, 0, 0),
+            new GodAffinity('Hermes',   0, 0, 0),
+            new GodAffinity('Apolo',    0, 0, 0),
+            new GodAffinity('Atenea',   0, 0, 0),
+            new GodAffinity('Hefesto',  0, 0, 0),
+            new GodAffinity('Poseidon', 0, 0, 0),
+            new GodAffinity('Ares',     0, 0, 0),
+            new GodAffinity('Dioniso',  0, 0, 0),
+            new GodAffinity('Hera',     0, 0, 0),
+            new GodAffinity('Zeus',     0, 0, 0)
         ];
     }
 
