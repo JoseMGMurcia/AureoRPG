@@ -29,11 +29,18 @@ export class CharacterController{
         return name.length > 2 && Number.isNaN( Number(name) ) ? true : false;
     }
 
-    static converToCharacters(nonFormatedCharacters: any[]){
+    /**
+     *  Transform JSON characters to a Character Array
+     * @param unformatedChars  The characters array in JSON format
+     * @returns  Character array mapped
+     */
+    static converToCharacters(unformatedChars: any[]){
         this.characters = [];
-        nonFormatedCharacters.forEach(character => {
-            this.characters.push( CharacterController.mapCharacter(character));
-        });
+        if(null !== unformatedChars){
+            unformatedChars.forEach(character => {
+                this.characters.push( CharacterController.mapCharacter(character) );
+            });
+        }
         return this.characters;
     }
 
@@ -104,20 +111,6 @@ export class CharacterController{
         this.character.setTitles(protoCharacter.titles);
        
         return this.character;
-    }
-
-    private static copyMods(mods: any[]){
-        let modsTBR: Modificator[] = [];
-        mods.forEach(mod => {
-            try {
-                modsTBR.push(new Modificator(mod.value, mod.name)); 
-            } catch (error) {
-                console.log("invalid modificator found");
-                console.log(error);
-                //Error tramitation point (future)                
-            }
-        });
-        return modsTBR;
     }
 
     private static copyCombatEquip(combatEq: any[]){
@@ -227,5 +220,19 @@ export class CharacterController{
             }         
         });
         return skillsTBR;
+    }
+
+    private static copyMods(mods: any[]){
+        let modsTBR: Modificator[] = [];
+        mods.forEach(mod => {
+            try {
+                modsTBR.push(new Modificator(mod.value, mod.name)); 
+            } catch (error) {
+                console.log("invalid modificator found");
+                console.log(error);
+                //Error tramitation point (future)                
+            }
+        });
+        return modsTBR;
     }
 }

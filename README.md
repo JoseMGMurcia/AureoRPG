@@ -13,7 +13,7 @@ Current versión 0.0.4
   - [x] Add character.
   - [x] Tabs for character detail page.(General / combat / powers / skill / background )
   - [ ] Represent current character in the tabs.
-  - [ ] Finish character mapping from JSON.
+  - [x] Character mapping from JSON.
   - [ ] Editing character in tab.
   - [ ] Character validation first method.
  
