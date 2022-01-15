@@ -15,6 +15,7 @@ Current versión 0.0.4
   - [ ] Represent current character in the tabs.
   - [ ] Finish character mapping from JSON.
   - [ ] Editing character in tab.
+  - [ ] Character validation first method.
  
 - Fisrt Design, users can't see empty or undesigned pages.
   - [ ] Home page first design.
