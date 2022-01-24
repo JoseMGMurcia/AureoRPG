@@ -21,6 +21,23 @@ export class CharacterController{
     }
 
     /**
+     * Validates if a character has all its values correctly formed
+     * @param character The character to be validated
+     * @returns a validation response.
+     */
+    static isCharacterValid(character: Character){
+        let characterResponse: CharacterValidationResponse = new CharacterValidationResponse();
+
+        if ( !this.isNameValid(character.getName()) ){
+            characterResponse.getErrors().push(new ValidationError(1, "Invalid Character name"));
+        }
+
+        //WORK IN PROGRESS 
+        return characterResponse;
+    }
+
+
+    /**
      * Validates a character name.
      * @param name A character name to be validated
      * @returns true if valid false if not
@@ -234,5 +251,60 @@ export class CharacterController{
             }
         });
         return modsTBR;
+    }
+}
+
+class CharacterValidationResponse{
+
+    private isValid: boolean;
+    private errors: Error[];
+
+    constructor(){
+        this.isValid = true;
+        this.errors = [];
+    }
+
+    //GETERS & SETTERS
+
+    public getIsValid(){
+        return this.isValid;
+    }
+
+    public setIsValid(isValid: boolean){
+        this.isValid = isValid;
+    }
+
+    public getErrors(){
+        return this.errors;
+    }
+
+    public setErrors(errors: ValidationError[]){
+        this.errors = errors;
+    }  
+}
+
+class ValidationError{
+    private code: number;
+    private message: string;
+
+    constructor( code: number, message: string ){
+        this.code = code;
+        this.message = message;
+    }
+
+    //GETERS & SETTERS
+
+    public getCode(){
+        return this.code;
+    }
+    public setCode(code: number){
+        this.code = code;
+    }
+
+    public getMessage(){
+        return this.message;
+    }
+    public setMessage(message: string){
+        this.message = message;
     }
 }
