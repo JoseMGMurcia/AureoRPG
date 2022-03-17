@@ -245,7 +245,7 @@ export class CharacterController{
             try {
                 modsTBR.push(new Modificator(mod.value, mod.name)); 
             } catch (error) {
-                console.log("invalid modificator found");
+                console.log("Invalid modificator found");
                 console.log(error);
                 //Error tramitation point (future)                
             }
@@ -257,7 +257,7 @@ export class CharacterController{
 class CharacterValidationResponse{
 
     private isValid: boolean;
-    private errors: Error[];
+    private errors: ValidationError[];
 
     constructor(){
         this.isValid = true;

@@ -23,7 +23,7 @@ export class AppComponent {
   public characters: Character[];
 
   constructor(
-    private translate: TranslateService, 
+    public translate: TranslateService, 
     private navCtrl: NavController,
     private router: Router,
     public storageService: StorageService

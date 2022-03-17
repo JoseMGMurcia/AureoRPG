@@ -14,10 +14,10 @@ import { DATABASE_NAME } from 'src/app/const';
 export class CharactersPage implements OnInit {
   characs: Character[];
   app : AppComponent;
-  constructor(
-    app: AppComponent, 
-    private translate: TranslateService) {
+  private ts: TranslateService
+  constructor(app: AppComponent) {
     this.app = app;
+    this.ts = app.translate;
   }
 
   ngOnInit() {
@@ -27,59 +27,58 @@ export class CharactersPage implements OnInit {
     this.characs = this.app.characters;
   }
 
-  async addCharacter(){
+  addCharacter(){
     const alerParams: any = {
-      header: await this.app.getText("CHAR_PAGE.ADD_ALERT.HEADER"),
-      subHeader: await this.app.getText("CHAR_PAGE.ADD_ALERT.TEXT"),
+      header: this.ts.instant("CHAR_PAGE.ADD_ALERT.HEADER") ,
+      subHeader: this.ts.instant("CHAR_PAGE.ADD_ALERT.TEXT"),
       inputs: [{
         name: 'name1',
-        placeholder: await this.app.getText("CHAR_PAGE.ADD_ALERT.NAME")
+        placeholder: this.ts.instant("CHAR_PAGE.ADD_ALERT.NAME")
       }],
       buttons: [{
-          text: await this.app.getText("CHAR_PAGE.ADD_ALERT.AGREE"),
+          text: this.ts.instant("CHAR_PAGE.ADD_ALERT.AGREE"),
           cssClass: 'secondary',
-          handler: async data => {
+          handler: data => {
             if( CharacterController.isNameValid(data.name1) ){
               this.app.characters.push(new Character(data.name1));
-              this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters))
+              this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters));
             }else{
               // Not a valid name
               const alerNotValidParams: any= {
-                header: await this.app.getText("CHAR_PAGE.ADD_ALERT.NO_VALID_NAME"),
-                buttons: [await this.app.getText("CHAR_PAGE.ADD_ALERT.AGREE")]
+                header: this.ts.instant("CHAR_PAGE.ADD_ALERT.NO_VALID_NAME"),
+                buttons: [ this.ts.instant("CHAR_PAGE.ADD_ALERT.AGREE") ]
               };
               alertController.create(alerNotValidParams).then(res => {
                 res.present();
               });
             }
           }
-        },
-        await this.app.getText("CHAR_PAGE.ADD_ALERT.CANCEL")
+        }, this.ts.instant("CHAR_PAGE.ADD_ALERT.CANCEL")
       ]
     };
-    alertController.create(alerParams).then(res => {
-      res.present();
+    alertController.create(alerParams).then(alert => {
+      alert.present();
     });
   }
 
-  async deleteCharacter(character: Character){
+  deleteCharacter(character: Character){
     const alerParams: any = {
-    header: await this.app.getText("CHAR_PAGE.DELETE_ALERT.HEADER"),
-    subHeader: await this.app.getText("CHAR_PAGE.DELETE_ALERT.TEXT", { character: character.getName() }),
-    buttons: [{
-      text: await this.app.getText("CHAR_PAGE.DELETE_ALERT.AGREE"),
-      cssClass: 'secondary',
-      handler: () => {
-        const index = this.app.characters.indexOf(character);
-        if (index > -1) {
-          this.app.characters.splice(index, 1);
-          this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters));
+      header: this.ts.instant("CHAR_PAGE.DELETE_ALERT.HEADER"),
+      subHeader: this.ts.instant("CHAR_PAGE.DELETE_ALERT.TEXT", { character: character.getName() }),
+      buttons: [{
+        text: this.ts.instant("CHAR_PAGE.DELETE_ALERT.AGREE"),
+        cssClass: 'secondary',
+        handler: () => {
+          const index = this.app.characters.indexOf(character);
+          if (index > -1) {
+            this.app.characters.splice(index, 1);
+            this.app.storageService.set(DATABASE_NAME, JSON.stringify(this.app.characters));
+          }
         }
-      }
-    }, await this.app.getText("CHAR_PAGE.DELETE_ALERT.CANCEL")
-    ]};
-    alertController.create(alerParams).then(res => {
-      res.present();
+      }, this.ts.instant("CHAR_PAGE.DELETE_ALERT.CANCEL")]
+    };
+    alertController.create(alerParams).then(alert => {
+      alert.present();
     });
   }
 }
