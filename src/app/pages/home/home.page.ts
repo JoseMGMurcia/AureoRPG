@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { URL_AUREO } from 'src/app/const';
+
 
 @Component({
   selector: 'app-home',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.page.scss'],
 })
 export class HomePage implements OnInit {
-
+  ngOnInit() {
+  }
   constructor() { }
 
-  ngOnInit() {
+  onClickMore(){
+    console.log("Opening");
+    window.open(URL_AUREO, '_system');
   }
 
 }

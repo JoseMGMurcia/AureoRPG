@@ -47,10 +47,9 @@ export class AppComponent {
     let protoCharacters = JSON.parse( await this.storageService.get(DATABASE_NAME) );
     this.characters = CharacterController.converToCharacters(protoCharacters);
     console.log(this.characters);
-    
   }
 
-  navigateToDetail(character: Character){
+  navigateToDetail(character : Character){
     const params = { character };
     if(this.router.url.substring(0,7) == '/detail') {
       this.navCtrl.pop().then(() => {
@@ -59,5 +58,13 @@ export class AppComponent {
     }else{
       this.navCtrl.navigateForward('detail' , { state: params} );
     }
+  }
+
+  async getText(text: string, parameters? : any ){
+    let translatedText: string
+    await this.translate.get(text, parameters).subscribe((res: string) => {
+      translatedText = res;
+    });
+    return translatedText;
   }
 }
